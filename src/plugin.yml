@@ -1,0 +1,62 @@
+name: Reputation
+description: Earn points by playing!
+main: com.domsplace.Reputation.ReputationPlugin
+authors: [Dominic]
+website: http://domsplace.com/
+version: '1.00'
+softdepend: [Vault]
+commands:
+   reputation:
+      description: Reload the Reputation Configuration.
+      usage: /<command> [player]
+      permission: Reputation.reputation
+   getrep:
+      description: Gets the reputation of a player.
+      aliases: [getreputation, selgetrep, rep]
+      usage: /<command> [player]
+      permission: Reputation.getrep
+   giverep:
+      description: Gives reputation to a player.
+      aliases: [addrep, givereputation, addreputation, selgiverep]
+      usage: /<command> [player] [amount]
+      permission: Reputation.giverep
+   setrep:
+      description: Sets the reputation of a player.
+      aliases: [setreputation, selsetrep]
+      usage: /<command> [player] [amount]
+      permission: Reputation.setrep
+   sendrep:
+      description: Sends reputation to other players.
+      aliases: [sr, selsr]
+      usage: /<command> [player] [amount]
+      permission: Reputation.sendrep
+   buykit:
+      description: Buys a kit using reputation.
+      aliases: [buy, selbuy, spendrep]
+      usage: /<command> [kit]
+      permission: Reputation.buykit
+permissions:
+   Reputation.*:
+     description: Gives access to all Reputation permissions.
+     children:
+       Reputation.reputation: true
+       Reputation.getrep: true
+       Reputation.giverep: true
+       Reputation.setrep: true
+       Reputation.sendrep: true
+       Reputation.buykit: true
+   Reputation.getrep:
+     description: Allows players to use the /getrep command.
+     default: op
+   Reputation.giverep:
+     description: Allows players to use the /giverep command.
+     default: op
+   Reputation.setrep:
+     description: Allows players to use the /setrep command.
+     default: op
+   Reputation.sendrep:
+     description: Allows players to use the /sendrep command.
+     default: op
+   Reputation.buykit:
+     description: Allows players to use the /buykit command.
+     default: op
